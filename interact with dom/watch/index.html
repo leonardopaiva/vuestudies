@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+    <div id="app">
+      <p>
+        O computed serve para atualizar um method apenas quando algum parametro dentro delimiters
+        mudar, isso porque qualquer método chamado diretamente na template, será também
+        chamado sempre que algum evento renderizar novamente a template.
+      </p>
+      <button v-on:click="counter++">Increase</button>
+      <button v-on:click="counter--">Decrease</button>
+      <button v-on:click="secondCounter++">Increase Second</button>
+      <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+      <p>Result: {{ result() }} | {{ output }}</p>
+      <p> {{ teste() }}</p>
+    </div>
+</body>
+</html>

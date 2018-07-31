@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../../vue.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+    <div id="app">
+      <h1 v-once>{{ title }}</h1>
+      <p v-if="show">you can see me!</p>
+      <p v-else>Now you see me!</p>
+
+      <div v-show="show">This div is only hidden(display none), it will not be removed from dom like happens to v-if</div>
+
+      <button @click="show = !show">Switch</button>
+
+      <hr>
+
+      <template v-if="show">
+        <h1>Heading</h1>
+        <p>Inside a template</p>
+      </template>
+
+      <hr>
+
+      <div v-if="type === 'A'">
+        A
+      </div>
+      <div v-else-if="type === 'B'">
+        B
+      </div>
+      <div v-else-if="type === 'C'">
+        C
+      </div>
+      <div v-else>
+        Not A/B/C
+      </div>
+    </div>
+</body>
+</html>
